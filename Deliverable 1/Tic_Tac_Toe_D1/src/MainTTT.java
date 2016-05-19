@@ -1,10 +1,9 @@
 public class MainTTT {
 
-public static void main(String[] args) {
+	public static void main(String[] args) {
 
+		TicTacToe obj = new TicTacToe();
 
-    TicTacToe C = new TicTacToe(); 
-
-}
+	}
 
 }
