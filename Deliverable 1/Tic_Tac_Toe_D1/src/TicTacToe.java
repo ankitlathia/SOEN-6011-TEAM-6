@@ -43,10 +43,7 @@ public class TicTacToe extends JFrame {
 
 			player.add(name);
 		}
-		for (int i = 0; i < player.size(); i++) {
-			System.out.println(" " + player.get(i));
-		}
-
+		
 		label2 = new JLabel(TicTacToe.player.get(0) + "'s turn");
 		add(label2, BorderLayout.PAGE_START);
 

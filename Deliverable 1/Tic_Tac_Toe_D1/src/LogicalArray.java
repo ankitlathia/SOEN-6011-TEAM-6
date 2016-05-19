@@ -81,7 +81,7 @@ public class LogicalArray {
 			Brd.DisableAllPositions(false);
 
 		}
-
+		
 	}
 
 }
