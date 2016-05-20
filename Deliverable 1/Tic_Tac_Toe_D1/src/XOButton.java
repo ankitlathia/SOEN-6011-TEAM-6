@@ -21,9 +21,9 @@ public class XOButton extends JButton implements ActionListener {
 	private int PlayerMark = 1;
 	int arrayX = 0;
 	int arrayY = 0;
-	/*
-	 * 0:nothing 1:X 2:O
-	 */
+	
+	 // 0:nothing 1:X 2:O
+	 
 
 	public XOButton() {
 		// creates the panel
@@ -52,13 +52,10 @@ public class XOButton extends JButton implements ActionListener {
 		for (int i = 0; i < 9; i++) {
 			if (Pressed == buttons[i]) {
 
-				SetXOPosition(Pressed, Player); // change position text to "X"
-												// or "O"
-				GArray.ArrayInitialize(i, PlayerMark);
-				JButtonPositionDisabler(buttons[i], Player); // Disable position
-																// of click
-				PlayerMark = SwithPlayersTurn(Player); // Switch Turns of
-														// players
+				SetXOPosition(Pressed, Player); // change position text to "X" or "O"
+				GArray.ArrayInitialize(i, PlayerMark); //Initialize game array
+				JButtonPositionDisabler(buttons[i], Player); // Disable position of click
+				PlayerMark = SwithPlayersTurn(Player); // Switch Turns of players
 
 			}
 
@@ -73,7 +70,6 @@ public class XOButton extends JButton implements ActionListener {
 		DefaultContentPosition();
 		DisableAllPositions(true);
 		Player = false; // player x
-		
 		PlayerMark = 1; // default Value x
 
 	}
@@ -85,16 +81,16 @@ public class XOButton extends JButton implements ActionListener {
 
 	}
 
-	public int SwithPlayersTurn(boolean last) {
+	public int SwithPlayersTurn(boolean lastTrun) {
 
 		System.out.println();
 
-		if (last == true) {
+		if (lastTrun == true) {
 			Player = false;
 			TicTacToe.label2.setText(TicTacToe.player.get(0) + "'s turn");
 			return 1;
 
-		} else if (last == false) {
+		} else if (lastTrun == false) {
 			Player = true;
 			TicTacToe.label2.setText(TicTacToe.player.get(2) + "'s turn");
 			return 2;
@@ -107,19 +103,23 @@ public class XOButton extends JButton implements ActionListener {
 	public void JButtonPositionDisabler(JButton Btn, boolean Play) {
 
 		Btn.setEnabled(false);
-		if (Play == true) {
+		if (Play == true) { 
+			
 			Btn.setDisabledIcon(O);
+			
 		} else if (Play == false) {
+			
 			Btn.setDisabledIcon(X);
+			
 		}
 
 	}
 
-	public void DisableAllPositions(boolean Opp) {
+	public void DisableAllPositions(boolean disable) {
 
 		for (int i = 0; i < 9; i++) {
 
-			buttons[i].setEnabled(Opp);
+			buttons[i].setEnabled(disable);
 		}
 
 	}

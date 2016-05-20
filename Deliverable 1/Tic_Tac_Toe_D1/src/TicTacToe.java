@@ -19,9 +19,9 @@ public class TicTacToe extends JFrame {
 	static JLabel label2;
 	String p1, p2, xostr ;
 	
-	JFrame main = new JFrame("Player Form ");
+	JFrame nameFrame = new JFrame("Player Form ");
 	
-    JPanel frame = new JPanel(new GridLayout(0,1));
+    JPanel namePanel = new JPanel(new GridLayout(0,1));
 	JTextField pName1 = new JTextField(5);
 	JTextField pName2 = new JTextField(5);
 	JTextField xo = new JTextField(5);
@@ -33,7 +33,7 @@ public class TicTacToe extends JFrame {
 	public TicTacToe() {
 
 		setLayout(new BorderLayout());
-		main.setLayout(new GridLayout(0,1));
+		nameFrame.setLayout(new GridLayout(0,1));
 
 		GameBoard = new XOButton();
 		TButtons = new CloseReset();
@@ -45,14 +45,14 @@ public class TicTacToe extends JFrame {
 		add(TButtons, BorderLayout.SOUTH);
 
 		
-		main.add(frame);
-			frame.add(new JLabel("Player 1 Name : "));
-			frame.add(pName1);
-			frame.add(new JLabel("Player 1 Choose X or 0"));
-			frame.add(xo);
-			frame.add(new JLabel("Player 2 Name : "));
-			frame.add(pName2);
-			result = JOptionPane.showConfirmDialog(null,frame, "Name of player", JOptionPane.OK_OPTION);
+			nameFrame.add(namePanel);
+			namePanel.add(new JLabel("Player 1 Name : "));
+			namePanel.add(pName1);
+			namePanel.add(new JLabel("Player 1 Choose X or 0"));
+			namePanel.add(xo);
+			namePanel.add(new JLabel("Player 2 Name : "));
+			namePanel.add(pName2);
+			result = JOptionPane.showConfirmDialog(null,namePanel, "Name of player", JOptionPane.OK_OPTION);
 			if(result == JOptionPane.OK_OPTION) {
 				p1=pName1.getText();
 				xostr = xo.getText();
@@ -77,10 +77,6 @@ public class TicTacToe extends JFrame {
 				player.add(p2);
 			}
 			
-			
-			
-
-		
 		label2 = new JLabel(TicTacToe.player.get(0) + "'s turn");
 		add(label2, BorderLayout.PAGE_START);
 

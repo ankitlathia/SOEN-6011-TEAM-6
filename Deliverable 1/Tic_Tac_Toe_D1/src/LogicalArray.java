@@ -7,14 +7,14 @@ public class LogicalArray {
 	/*
 	 * Class for checking Win condition checking
 	 */
-	private XOButton Brd;
+	private XOButton xoxoBrd;
 	private int GArray[];
 
 	LogicalArray(XOButton B) {
 
 		GArray = new int[9];
 
-		Brd = B;
+		xoxoBrd = B;
 
 		for (int i = 0; i < 9; i++) {
 			GArray[i] = 0;
@@ -38,15 +38,15 @@ public class LogicalArray {
 
 			if (Marker == 1) {
 
-				//JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
+				//JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
 
 			} else if (Marker == 2) {
 
-				//JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
+				//JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
 
 			}
 
-			//Brd.DisableAllPositions(false);
+			//xoBrd.DisableAllPositions(false);
 
 		} else
 
@@ -56,14 +56,14 @@ public class LogicalArray {
 			// Check vertical boxes in board
 
 			if (Marker == 1) {
-			//	JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
+			//	JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
 
 			} else if (Marker == 2) {
-			//	JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
+			//	JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
 
 			}
 
-			//Brd.DisableAllPositions(false);
+			//xoBrd.DisableAllPositions(false);
 
 		} else if ((GArray[0] == Marker && GArray[4] == Marker && GArray[8] == Marker)
 				|| (GArray[6] == Marker && GArray[4] == Marker && GArray[2] == Marker))
@@ -72,13 +72,13 @@ public class LogicalArray {
 			// Check diagonal boxes in board
 
 			if (Marker == 1) {
-			//	JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
+			//	JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
 
 			} else if (Marker == 2) {
-			//	JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
+			//	JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
 
 			}
-			//Brd.DisableAllPositions(false);
+			//xoBrd.DisableAllPositions(false);
 
 		}
 		
