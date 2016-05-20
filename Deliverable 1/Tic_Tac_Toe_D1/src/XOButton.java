@@ -17,7 +17,7 @@ public class XOButton extends JButton implements ActionListener {
 	static JButton buttons[] = new JButton[9];
 
 	private LogicalArray GArray; // Class with Array
-	private boolean Player = false;
+	static boolean Player = false;
 	private int PlayerMark = 1;
 	int arrayX = 0;
 	int arrayY = 0;
@@ -72,8 +72,8 @@ public class XOButton extends JButton implements ActionListener {
 
 		DefaultContentPosition();
 		DisableAllPositions(true);
-
-		Player = false; // default player 1
+		Player = false; // player x
+		
 		PlayerMark = 1; // default Value x
 
 	}
@@ -96,7 +96,7 @@ public class XOButton extends JButton implements ActionListener {
 
 		} else if (last == false) {
 			Player = true;
-			TicTacToe.label2.setText(TicTacToe.player.get(1) + "'s turn");
+			TicTacToe.label2.setText(TicTacToe.player.get(2) + "'s turn");
 			return 2;
 		} else {
 			return 3;

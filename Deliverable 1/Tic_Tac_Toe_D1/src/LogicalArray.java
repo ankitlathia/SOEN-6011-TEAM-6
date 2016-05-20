@@ -38,15 +38,15 @@ public class LogicalArray {
 
 			if (Marker == 1) {
 
-				JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
+				//JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
 
 			} else if (Marker == 2) {
 
-				JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(1) + " Win the game");
+				//JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
 
 			}
 
-			Brd.DisableAllPositions(false);
+			//Brd.DisableAllPositions(false);
 
 		} else
 
@@ -56,14 +56,14 @@ public class LogicalArray {
 			// Check vertical boxes in board
 
 			if (Marker == 1) {
-				JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
+			//	JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
 
 			} else if (Marker == 2) {
-				JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(1) + " Win the game");
+			//	JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
 
 			}
 
-			Brd.DisableAllPositions(false);
+			//Brd.DisableAllPositions(false);
 
 		} else if ((GArray[0] == Marker && GArray[4] == Marker && GArray[8] == Marker)
 				|| (GArray[6] == Marker && GArray[4] == Marker && GArray[2] == Marker))
@@ -72,13 +72,13 @@ public class LogicalArray {
 			// Check diagonal boxes in board
 
 			if (Marker == 1) {
-				JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
+			//	JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
 
 			} else if (Marker == 2) {
-				JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(1) + " Win the game");
+			//	JOptionPane.showMessageDialog(Brd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
 
 			}
-			Brd.DisableAllPositions(false);
+			//Brd.DisableAllPositions(false);
 
 		}
 		

@@ -1,4 +1,5 @@
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -12,10 +13,18 @@ import java.util.ArrayList;
 public class TicTacToe extends JFrame {
 	JPanel p = new JPanel();
 	XOButton buttons[] = new XOButton[9]; // Board and Button
-
+	int result;
 	static ArrayList<String> player = new ArrayList<String>();
-	JFrame frame = new JFrame("InputDialog Example #1");
+	
 	static JLabel label2;
+	String p1, p2, xostr ;
+	
+	JFrame main = new JFrame("Player Form ");
+	
+    JPanel frame = new JPanel(new GridLayout(0,1));
+	JTextField pName1 = new JTextField(5);
+	JTextField pName2 = new JTextField(5);
+	JTextField xo = new JTextField(5);
 
 	private CloseReset TButtons; // Exit and Reset
 
@@ -24,6 +33,7 @@ public class TicTacToe extends JFrame {
 	public TicTacToe() {
 
 		setLayout(new BorderLayout());
+		main.setLayout(new GridLayout(0,1));
 
 		GameBoard = new XOButton();
 		TButtons = new CloseReset();
@@ -34,15 +44,42 @@ public class TicTacToe extends JFrame {
 
 		add(TButtons, BorderLayout.SOUTH);
 
-		for (int i = 0; i < 2; i++) {
-			String name = JOptionPane.showInputDialog(frame, "Name of player" + (i + 1));
-
-			if (name.equals("")) {
-				name = "player" + (i + 1);
+		
+		main.add(frame);
+			frame.add(new JLabel("Player 1 Name : "));
+			frame.add(pName1);
+			frame.add(new JLabel("Player 1 Choose X or 0"));
+			frame.add(xo);
+			frame.add(new JLabel("Player 2 Name : "));
+			frame.add(pName2);
+			result = JOptionPane.showConfirmDialog(null,frame, "Name of player", JOptionPane.OK_OPTION);
+			if(result == JOptionPane.OK_OPTION) {
+				p1=pName1.getText();
+				xostr = xo.getText();
+				p2=pName2.getText();
+				
+				player.add(p1);
+				player.add(xostr);
+				player.add(p2);
+				
+				if(player.get(1).equalsIgnoreCase("x")){
+					XOButton.Player = false; // player x	
+				}else{
+					XOButton.Player = true; // player 0
+				}
+			}else {
+				p1="Player 1";
+				xostr = "x";
+				p2="Player 2";
+				
+				player.add(p1);
+				player.add("x");
+				player.add(p2);
 			}
+			
+			
+			
 
-			player.add(name);
-		}
 		
 		label2 = new JLabel(TicTacToe.player.get(0) + "'s turn");
 		add(label2, BorderLayout.PAGE_START);
