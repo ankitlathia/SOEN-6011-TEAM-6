@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="concordia.soen6011.tictactoe.MenuActivity"
+    android:background="@android:color/black">
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Tic Tac Toe"
+        android:id="@+id/settingslabel"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/single_mode"
+        android:layout_alignStart="@+id/single_mode"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:textSize="40dp"
+        android:textStyle="bold|italic"
+        android:typeface="serif"
+        android:textColor="@android:color/holo_green_light" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Single Mode"
+        android:id="@+id/single_mode"
+        android:onClick="menuClick"
+        android:layout_below="@+id/settingslabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:background="@android:color/holo_orange_dark"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textSize="20dp" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="3 Series Tournament"
+        android:id="@+id/series_three"
+        android:onClick="menuClick"
+        android:layout_below="@+id/settingslabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="125dp"
+        android:background="@android:color/holo_orange_dark"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textSize="20dp" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="5 Series Tournament"
+        android:id="@+id/series_five"
+        android:onClick="menuClick"
+        android:layout_below="@+id/settingslabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:background="@android:color/holo_orange_dark"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textSize="20dp" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="LeaderBoard"
+        android:id="@+id/leaderboard"
+        android:onClick="menuClick"
+        android:layout_below="@+id/settingslabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="235dp"
+        android:background="@android:color/holo_orange_dark"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textSize="20dp" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:id="@+id/settings"
+        android:layout_below="@+id/single_mode"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="170dp"
+        android:background="@android:color/holo_orange_dark"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textSize="20dp"
+        android:onClick="menuClick" />
+
+</RelativeLayout>

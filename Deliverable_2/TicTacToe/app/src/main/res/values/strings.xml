@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Tic Tac Toe</string>
+    <string name="settings_msg_edit">Tap player name to edit</string>
+    <string name="settings_btn_save">Save</string>
+    <string name="symbol_cross">X</string>
+    <string name="symbol_zero">O</string>
+    <string name="settings_save_msg">Settings Saved</string>
+    <string name="game_reset_msg">Game reset</string>
+    <string name="main_menu">Main menu</string>
+    <string name="exit">Exit</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="game_over">Game Over</string>
+    <string name="game_draw">Game Draw</string>
+    <string name="first_game">1st game of the series</string>
+    <string name="second_game">2nd game of the series</string>
+    <string name="third_game">3rd game of the series</string>
+    <string name="fourth_game">4th game of the series</string>
+    <string name="last_game">Last game of the series</string>
+    <string name="game_win">Win</string>
+    <string name="game_loss">Loss</string>
+    <string name="game_mode_single">1-Single</string>
+    <string name="game_mode_three">3-Series</string>
+    <string name="game_mode_five">5-Series</string>
+    <string name="oops">Oops</string>
+    <string name="game_new">New Game</string>
+
+</resources>

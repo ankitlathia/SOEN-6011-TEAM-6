@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/baselayout"
+    android:background="@android:color/background_dark">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/statusboard"
+        android:background="@android:color/holo_green_light">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/playeronename"
+            android:singleLine="false"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="@color/abc_primary_text_material_light"
+            android:typeface="serif"
+            android:textStyle="bold"
+            android:text="Player  1: O"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/playeronewins"
+            android:layout_toEndOf="@+id/playeronewins"
+            android:layout_marginLeft="3dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/playertwoname"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:textColor="@color/abc_primary_text_material_light"
+            android:layout_weight="1"
+            android:text="Player 2: X"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="3dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Player 1&apos;s Turn"
+            android:id="@+id/playerturn"
+            android:textSize="20dp"
+            android:typeface="monospace"
+            android:textColor="@color/abc_primary_text_material_light"
+            android:layout_below="@+id/playeronename"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Player 1 wins: 0"
+            android:id="@+id/playeronewins"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/abc_primary_text_material_light"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginLeft="5dp"
+            android:typeface="serif"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Player 2 wins: 0"
+            android:id="@+id/playertwowins"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/abc_primary_text_material_light"
+            android:textSize="20dp"
+            android:layout_marginRight="5dp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/playeronestatus"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/abc_primary_text_material_light"
+            android:textSize="15sp"
+            android:layout_marginLeft="3dp"
+            android:typeface="serif"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/playertwostatus"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/abc_primary_text_material_light"
+            android:textSize="15sp"
+            android:layout_marginRight="3dp"
+            android:typeface="serif"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gridlayout"
+        android:orientation="vertical">
+    <TableLayout
+        android:id="@+id/grid"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <TableRow
+            android:id="@+id/RowOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <Button
+                android:id="@+id/cell00"
+                android:layout_height="fill_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:onClick="boxClick" />
+            <Button
+                android:id="@+id/cell01"
+                android:layout_height="fill_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:onClick="boxClick" />
+            <Button
+                android:id="@+id/cell02"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:onClick="boxClick"
+                android:layout_weight="1" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/RowTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <Button
+                android:id="@+id/cell10"
+                android:layout_height="fill_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:onClick="boxClick" />
+            <Button
+                android:id="@+id/cell11"
+                android:layout_height="fill_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:onClick="boxClick" />
+            <Button
+                android:id="@+id/cell12"
+                android:layout_height="fill_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:onClick="boxClick" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/RowThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <Button
+                android:id="@+id/cell20"
+                android:layout_height="fill_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:onClick="boxClick" />
+            <Button
+                android:id="@+id/cell21"
+                android:layout_height="fill_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:onClick="boxClick" />
+            <Button
+                android:id="@+id/cell22"
+                android:layout_height="fill_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:onClick="boxClick" />
+        </TableRow>
+    </TableLayout>
+    </LinearLayout>
+</LinearLayout>
