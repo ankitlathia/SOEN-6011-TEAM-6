@@ -9,7 +9,7 @@ public class LogicalArray {
 	 */
 	private XOButton xoxoBrd;
 	private int GArray[];
-
+	
 	LogicalArray(XOButton B) {
 
 		GArray = new int[9];
