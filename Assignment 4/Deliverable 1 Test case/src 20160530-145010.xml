@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="src" project="Tic_Tac_Toe_D1" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="TestCases.XOButtonTest" time="5.811">
+    <testcase name="SetXOPosition1Test" classname="TestCases.XOButtonTest" time="0.085"/>
+    <testcase name="SetXOPosition2Test" classname="TestCases.XOButtonTest" time="0.008"/>
+    <testcase name="SwithPlayersTurn1Test" classname="TestCases.XOButtonTest" time="4.145"/>
+    <testcase name="SwithPlayersTurn2Test" classname="TestCases.XOButtonTest" time="1.572"/>
+    <testcase name="DefaultContentPositionTest" classname="TestCases.XOButtonTest" time="0.001"/>
+  </testsuite>
+</testrun>
