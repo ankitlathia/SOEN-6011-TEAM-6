@@ -12,7 +12,7 @@ import com.XOButton;
 public class XOButtonTest {
 	
 		@Test
-		public void test1() {
+		public void SetXOPosition1Test() {
 			//TicTacToe obj = new TicTacToe();
 
 			XOButton x = new XOButton();
@@ -23,7 +23,7 @@ public class XOButtonTest {
 		} 
 		
 		@Test
-		public void test2() {
+		public void SetXOPosition2Test() {
 			//TicTacToe obj = new TicTacToe();
 
 			XOButton x = new XOButton();
@@ -33,7 +33,7 @@ public class XOButtonTest {
 			assertEquals("file:/C:/Users/s_khaksa/Desktop/SOEN-6011-TEAM-6-master/SOEN-6011-TEAM-6-master/Deliverable%201/Tic_Tac_Toe_D1/bin/com/X.png",Btn.getIcon().toString());
 		} 
 		@Test
-		public void test3() {
+		public void SwithPlayersTurn1Test() {
 
 			XOButton x = new XOButton();
 			TicTacToe obj = new TicTacToe();
@@ -42,7 +42,7 @@ public class XOButtonTest {
 			assertEquals(1,returnValue);
 		} 
 		@Test
-		public void test4() {
+		public void SwithPlayersTurn2Test() {
 
 			XOButton x = new XOButton();
 			TicTacToe obj = new TicTacToe();
@@ -51,7 +51,7 @@ public class XOButtonTest {
 			assertEquals(2,returnValue);
 		} 
 		@Test
-		public void test5() {
+		public void DefaultContentPositionTest() {
 			XOButton x = new XOButton();
 			x.DefaultContentPosition();
 			boolean test = true;
