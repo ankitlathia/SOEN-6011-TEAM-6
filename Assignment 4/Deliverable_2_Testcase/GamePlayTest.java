@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
  */
 public class GamePlayTest {
 
+
     @Test
     public void getWhichPlayerTest(){
         GamePlay gamePlay = new GamePlay("Test1", "Test2", "X", "O");
