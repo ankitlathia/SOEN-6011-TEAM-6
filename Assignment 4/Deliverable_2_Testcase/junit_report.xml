@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="concordia.soen6011.tictactoe" project="Coverage" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="concordia.soen6011.tictactoe.GamePlayTest" time="0.0">
+    <testcase name="getWhichPlayerTest" classname="concordia.soen6011.tictactoe.GamePlayTest" time="0.0"/>
+    <testcase name="checkWinner" classname="concordia.soen6011.tictactoe.GamePlayTest" time="0.0"/>
+  </testsuite>
+  <testsuite name="concordia.soen6011.tictactoe.PlayerTest" time="0.0">
+    <testcase name="instantiationTest" classname="concordia.soen6011.tictactoe.PlayerTest" time="0.0"/>
+    <testcase name="getNameTest" classname="concordia.soen6011.tictactoe.PlayerTest" time="0.0"/>
+    <testcase name="getIdTest" classname="concordia.soen6011.tictactoe.PlayerTest" time="0.0"/>
+  </testsuite>
+</testrun>
