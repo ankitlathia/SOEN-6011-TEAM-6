@@ -46,6 +46,7 @@ public class LogicalArray {
 				player2Score.add(0);
 				PlayerScore.model.addRow(new Object[] { 1, 0});
 				PlayerScore.totalScore();
+				ResetGame();
 				
 			} else if (Marker == 2) {
 
@@ -54,6 +55,7 @@ public class LogicalArray {
 				player2Score.add(1);
 				PlayerScore.model.addRow(new Object[] { 0, 1});
 				PlayerScore.totalScore();
+				ResetGame();
 			}
 
 			xoBrd.DisableAllPositions(false);
@@ -71,6 +73,7 @@ public class LogicalArray {
 				player2Score.add(0);
 				PlayerScore.model.addRow(new Object[] { 1, 0});
 				PlayerScore.totalScore();
+				ResetGame();
 				
 			} else if (Marker == 2) {
 				JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
@@ -78,6 +81,7 @@ public class LogicalArray {
 				player2Score.add(1);
 				PlayerScore.model.addRow(new Object[] { 0, 1});
 				PlayerScore.totalScore();
+				ResetGame();
 			}
 
 			xoBrd.DisableAllPositions(false);
@@ -94,6 +98,7 @@ public class LogicalArray {
 				player2Score.add(0);
 				PlayerScore.model.addRow(new Object[] { 1, 0});
 				PlayerScore.totalScore();
+				ResetGame();
 				
 			} else if (Marker == 2) {
 				JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
@@ -101,6 +106,7 @@ public class LogicalArray {
 				player2Score.add(1);
 				PlayerScore.model.addRow(new Object[] { 0, 1});
 				PlayerScore.totalScore();
+				ResetGame();
 			}
 			xoBrd.DisableAllPositions(false);
 
@@ -182,6 +188,8 @@ public class LogicalArray {
 		XOButton.cnt=0;
 		XOButton.val=1;
 		XOButton.let='\u0000';
+		XOButton.Player = false; // player x
+		XOButton.PlayerMark = 1; // default Value x
 		
 	}
 

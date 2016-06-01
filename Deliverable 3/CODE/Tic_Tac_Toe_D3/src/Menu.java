@@ -1,8 +1,10 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.net.MalformedURLException;
+
 import javax.swing.*;
 
-class Menu extends 	JPanel implements	ActionListener
+class Menu extends 	JFrame implements	ActionListener
 {
 	private final int	ITEM_PLAIN	=	0;	// Item types
 	private final int	ITEM_CHECK	=	1;
@@ -37,6 +39,7 @@ class Menu extends 	JPanel implements	ActionListener
 	private JRadioButtonMenuItem menuPlayersDifficult= new JRadioButtonMenuItem("Difficult");
 	
 
+		
 	public Menu()
 	{
 		
@@ -96,6 +99,41 @@ class Menu extends 	JPanel implements	ActionListener
 			    	menuPlayersEasy.setEnabled(false);
 			    	menuPlayersMedium.setEnabled(false);
 			    	menuPlayersDifficult.setEnabled(false);
+			    	
+			    	TicTacToe.player.clear();
+			    	TicTacToe.pName1.setText("");
+			    	TicTacToe.pName2.setText("");
+			    	TicTacToe.xo.setText("");
+			    	TicTacToe.result = JOptionPane.showConfirmDialog(null,TicTacToe.namePanel, "Name of player", JOptionPane.OK_OPTION);
+					if(TicTacToe.result == JOptionPane.OK_OPTION) {
+						TicTacToe.p1=TicTacToe.pName1.getText();
+						TicTacToe.xostr = TicTacToe.xo.getText();
+						TicTacToe.p2=TicTacToe.pName2.getText();
+						
+						TicTacToe.player.add(TicTacToe.p1);
+						TicTacToe.player.add(TicTacToe.xostr);
+						TicTacToe.player.add(TicTacToe.p2);
+						
+						PlayerScore.table.getColumnModel().getColumn(0).setHeaderValue(TicTacToe.p1);
+						PlayerScore.table.getColumnModel().getColumn(1).setHeaderValue(TicTacToe.p2);
+						
+						
+						if(TicTacToe.player.get(1).equalsIgnoreCase("x")){
+							XOButton.Player = false; // player x	
+						}else{
+							XOButton.Player = true; // player 0
+						}
+					}else {
+						TicTacToe.p1="Player 1";
+						TicTacToe.xostr = "x";
+						TicTacToe.p2="Player 2";
+						
+						TicTacToe.player.add(TicTacToe.p1);
+						TicTacToe.player.add("x");
+						TicTacToe.player.add(TicTacToe.p2);
+						PlayerScore.table.getColumnModel().getColumn(0).setHeaderValue(TicTacToe.p1);
+						PlayerScore.table.getColumnModel().getColumn(1).setHeaderValue(TicTacToe.p2);
+					}
 			    	
 			    }else{
 			    	menuPlayersComputer.setSelected(true);
@@ -174,8 +212,12 @@ class Menu extends 	JPanel implements	ActionListener
 			  @Override
 			  public void itemStateChanged(ItemEvent e) {
 			    if(e.getStateChange() == ItemEvent.SELECTED){
-			    	PlayAudio.playSound("/Users/ankit/Documents/workspace/Tic_Tac_Toe_D3/src/Puzzle.wav");
-			    	PlayAudio.sourceLine.start();
+			    	try {
+						playBackgroundAudio.playAudio(this.getClass().getResource("fortress.midi"));
+					} catch (MalformedURLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 			    	menuSettingsMusicOff.setSelected(false);
 			    }
 			  }
@@ -185,7 +227,7 @@ class Menu extends 	JPanel implements	ActionListener
 			  @Override
 			  public void itemStateChanged(ItemEvent e) {
 			    if(e.getStateChange() == ItemEvent.SELECTED){
-			    	PlayAudio.sourceLine.stop();
+			    	playBackgroundAudio.stopAudio();
 			    	menuSettingsMusicOn.setSelected(false);
 			    }
 			  }

@@ -21,9 +21,9 @@ public class XOButton extends JButton implements ActionListener {
 	static JButton buttons[] = new JButton[9];
 	static JButton Pressed;
 
-	private LogicalArray GArray; // Class with Array
+	private static LogicalArray GArray; // Class with Array
 	static boolean Player = false;
-	private int PlayerMark = 1;
+	static int PlayerMark = 1;
 	int arrayX = 0;
 	int arrayY = 0;
 	static Random rnd=new Random();
@@ -79,7 +79,8 @@ public class XOButton extends JButton implements ActionListener {
 		if(Menu.menuPlayersPlayers.isSelected())
 		playPlayers();
 		else
-		{
+		{	
+			TicTacToe.label2.setText("");
 			for (int i = 0; i < 9; i++) {
 				if (Pressed == buttons[i]) {
 					 if(play(i)&&turn==true)
@@ -128,7 +129,7 @@ public class XOButton extends JButton implements ActionListener {
 
 	public void SetGameVariables() {
 
-		GArray = new LogicalArray(this);
+		GArray =  new LogicalArray(this);
 
 		DefaultContentPosition();
 		DisableAllPositions(true);
@@ -143,7 +144,7 @@ public class XOButton extends JButton implements ActionListener {
 		cnt=0;
         val=1;
         let='\u0000';
-		TicTacToe.label2.setText(TicTacToe.player.get(0) + "'s turn");
+		//TicTacToe.label2.setText(TicTacToe.player.get(0) + "'s turn");
 
 	}
 
