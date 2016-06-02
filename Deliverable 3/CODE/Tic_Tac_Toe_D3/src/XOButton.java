@@ -83,7 +83,7 @@ public class XOButton extends JButton implements ActionListener {
 			TicTacToe.label2.setText("");
 			for (int i = 0; i < 9; i++) {
 				if (Pressed == buttons[i]) {
-					 if(play(i)&&turn==true)
+					 if(play(i / 3, i % 3)&&turn==true)
 				            AI.compplay(val);
 				}
 			}
@@ -100,7 +100,7 @@ public class XOButton extends JButton implements ActionListener {
 			if (Pressed == buttons[i]) {
 
 				SetXOPosition(Pressed, Player); // change position text to "X" or "O"
-				GArray.ArrayInitialize(i, PlayerMark); //Initialize game array
+				GArray.ArrayInitialize(i / 3, i % 3, PlayerMark); //Initialize game array
 				JButtonPositionDisabler(buttons[i], Player); // Disable position of click
 				PlayerMark = SwithPlayersTurn(Player); // Switch Turns of players
 				
@@ -108,19 +108,55 @@ public class XOButton extends JButton implements ActionListener {
 			
 		}
 	}
-	 static boolean play(int pos)
+	 static boolean play(int l,int m)
 	    {
-	        if(LogicalArray.GArray[pos]==0)
+	        if(LogicalArray.GArray[l][m]==0)
 	        {
-	        	XOButton.a=XOButton.c;
-	        	XOButton.b=XOButton.c;
-	        	XOButton.c=pos;
+	        	a = c;
+	        	b = d;
+	        	c = l;
+	        	d = m;
+	        	
 	        	flip();
-	        	SetXOPositionComp(buttons[pos], let);
-	            LogicalArray.GArray[pos]=val;
-	            JButtonPositionDisablerComp(buttons[pos], let);
-	            
-	            LogicalArray.checkwinComVsPly(pos,LogicalArray.GArray[pos]);
+	        	 LogicalArray.GArray[l][m]=val;
+	        	 
+	        	 if(l == 0 && m == 0){
+	        	SetXOPositionComp(buttons[0], let);
+	        	JButtonPositionDisablerComp(buttons[0], let);
+	        	 }
+	        	 if(l == 0 && m == 1){
+	 	        	SetXOPositionComp(buttons[1], let);
+	 	        	JButtonPositionDisablerComp(buttons[1], let);
+	 	        	 }
+	        	 if(l == 0 && m == 2){
+	 	        	SetXOPositionComp(buttons[2], let);
+	 	        	JButtonPositionDisablerComp(buttons[2], let);
+	 	        	 }
+	        	 if(l == 1 && m == 0){
+	 	        	SetXOPositionComp(buttons[3], let);
+	 	        	JButtonPositionDisablerComp(buttons[3], let);
+	 	        	 }
+	        	 if(l == 1 && m == 1){
+	 	        	SetXOPositionComp(buttons[4], let);
+	 	        	JButtonPositionDisablerComp(buttons[4], let);
+	 	        	 }
+	        	 if(l == 1 && m == 2){
+	 	        	SetXOPositionComp(buttons[5], let);
+	 	        	JButtonPositionDisablerComp(buttons[5], let);
+	 	        	 }
+	        	 if(l == 2 && m == 0){
+	 	        	SetXOPositionComp(buttons[6], let);
+	 	        	JButtonPositionDisablerComp(buttons[6], let);
+	 	        	 }
+	        	 if(l == 2 && m == 1){
+	 	        	SetXOPositionComp(buttons[7], let);
+	 	        	JButtonPositionDisablerComp(buttons[7], let);
+	 	        	 }
+	        	 if(l == 2 && m == 2){
+	 	        	SetXOPositionComp(buttons[8], let);
+	 	        	JButtonPositionDisablerComp(buttons[8], let);
+	 	        	 }
+	            LogicalArray.checkwinComVsPly(l,m,LogicalArray.GArray[l][m]);
 	            return true;
 	        }
 	        else
@@ -155,13 +191,13 @@ public class XOButton extends JButton implements ActionListener {
 		if (lastTrun == true) {
 			Player = false;
 			TicTacToe.label2.setText(TicTacToe.player.get(0) + "'s turn");
-			cnt++;
+			
 			return 1;
 
 		} else if (lastTrun == false) {
 			Player = true;
 			TicTacToe.label2.setText(TicTacToe.player.get(2) + "'s turn");
-			cnt++;
+			
 			return 2;
 		} else {
 			return 3;

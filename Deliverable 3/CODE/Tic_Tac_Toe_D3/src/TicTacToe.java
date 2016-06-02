@@ -79,6 +79,7 @@ public class TicTacToe extends JFrame {
 		label2.setHorizontalAlignment(SwingConstants.CENTER);
 		add(label2, BorderLayout.SOUTH);
 		
+		setTitle("Tic Tac Toe");
 		setVisible(true);
 		setSize(800, 500);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -9,25 +9,27 @@ public class LogicalArray {
 	 * Class for checking Win condition checking
 	 */
 	private static XOButton xoBrd;
-	static int[] GArray;
+	static int[][] GArray;
 	static ArrayList<Integer> player1Score = new ArrayList<Integer>(10);
 	static ArrayList<Integer> player2Score = new ArrayList<Integer>(10);
 	
 	LogicalArray(XOButton B) {
 
-		GArray = new int[9];
+		GArray = new int[3][3];
 
 		xoBrd = B;
 
-		for (int i = 0; i < 9; i++) {
-			GArray[i] = 0;
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++){
+			GArray[i][j] = 0;
+			}
 		}
 
 	}
 
-	public void ArrayInitialize(int i, int Marker) {
+	public void ArrayInitialize(int i,int j, int Marker) {
 
-		GArray[i] = Marker;
+		GArray[i][j] = Marker;
 		CheckValidationTOWin(Marker);
 	}
 
@@ -35,9 +37,13 @@ public class LogicalArray {
 
 		// Check horizontal boxes in board
 
-		if ((GArray[0] == Marker && GArray[1] == Marker && GArray[2] == Marker)
-				|| (GArray[3] == Marker && GArray[4] == Marker && GArray[5] == Marker)
-				|| (GArray[6] == Marker && GArray[7] == Marker && GArray[8] == Marker)) {
+//		if ((GArray[0] == Marker && GArray[1] == Marker && GArray[2] == Marker)
+//				|| (GArray[3] == Marker && GArray[4] == Marker && GArray[5] == Marker)
+//				|| (GArray[6] == Marker && GArray[7] == Marker && GArray[8] == Marker)) 
+		if((GArray[0][0] == Marker && GArray[0][1] == Marker && GArray[0][2] == Marker) ||
+				(GArray[1][0] == Marker && GArray[1][1] == Marker && GArray[1][2] == Marker) ||
+				(GArray[2][0] == Marker && GArray[2][1] == Marker && GArray[2][2] == Marker))
+		{
 
 			if (Marker == 1) {
 
@@ -62,9 +68,13 @@ public class LogicalArray {
 
 		} else
 
-		if ((GArray[0] == Marker && GArray[3] == Marker && GArray[6] == Marker)
-				|| (GArray[1] == Marker && GArray[4] == Marker && GArray[7] == Marker)
-				|| (GArray[2] == Marker && GArray[5] == Marker && GArray[8] == Marker)) {
+//		if ((GArray[0] == Marker && GArray[3] == Marker && GArray[6] == Marker)
+//				|| (GArray[1] == Marker && GArray[4] == Marker && GArray[7] == Marker)
+//				|| (GArray[2] == Marker && GArray[5] == Marker && GArray[8] == Marker)) 
+			if((GArray[0][0] == Marker && GArray[1][0] == Marker && GArray[2][2] == Marker) ||
+					(GArray[0][1] == Marker && GArray[1][1] == Marker && GArray[2][1] == Marker) ||
+					(GArray[0][2] == Marker && GArray[1][2] == Marker && GArray[2][2] == Marker))	
+		{
 			// Check vertical boxes in board
 
 			if (Marker == 1) {
@@ -86,8 +96,11 @@ public class LogicalArray {
 
 			xoBrd.DisableAllPositions(false);
 
-		} else if ((GArray[0] == Marker && GArray[4] == Marker && GArray[8] == Marker)
-				|| (GArray[6] == Marker && GArray[4] == Marker && GArray[2] == Marker))
+		} else 
+//			if ((GArray[0] == Marker && GArray[4] == Marker && GArray[8] == Marker)
+//				|| (GArray[6] == Marker && GArray[4] == Marker && GArray[2] == Marker))
+			if ((GArray[0][0] == Marker && GArray[1][1] == Marker && GArray[2][2] == Marker)
+					|| (GArray[2][0] == Marker && GArray[1][1] == Marker && GArray[0][2] == Marker))
 
 		{
 			// Check diagonal boxes in board
@@ -114,21 +127,20 @@ public class LogicalArray {
 		
 	}
 	
-	static void checkwinComVsPly(int pos,int n)
+	static void checkwinComVsPly(int l,int m,int n)
     {
         if(XOButton.cnt==1)
             if(XOButton.vs==1)
             	XOButton.turn=true;
         if(XOButton.cnt>4)
         {
-            if((GArray[0]+GArray[1]+GArray[2]==n*3) || (GArray[3]+GArray[4]+GArray[5]==n*3) || (GArray[6]+GArray[7]+GArray[8]==n*3) ||
-            (GArray[0]+GArray[3]+GArray[6]==n*3) || (GArray[1]+GArray[4]+GArray[7]==n*3) || (GArray[2]+GArray[5]+GArray[8]==n*3))
+            if((GArray[l][0]+GArray[l][1]+GArray[l][2]==n*3)||(GArray[0][m]+GArray[1][m]+GArray[2][m]==n*3))
             {
             	XOButton.cnt=n;
             }
             else
             {
-                if((GArray[0]+GArray[4]+GArray[8] == n*3) || (GArray[6]+GArray[4]+GArray[2] == n*3))
+                if((GArray[0][0]+GArray[1][1]+GArray[2][2]==n*3)||(GArray[2][0]+GArray[1][1]+GArray[0][2]==n*3))
                 {
                 	XOButton.cnt=n;
                 }
@@ -143,13 +155,15 @@ public class LogicalArray {
             if(XOButton.cnt==1||XOButton.cnt==0)
             {
                 if(XOButton.cnt==1)
+                {
                 	JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + XOButton.pl1 + " Win the game");
-                xoBrd.DisableAllPositions(false);
-                XOButton.DefaultContentPosition();
+                }
+                
                 if(XOButton.cnt==0)
+                {
                 	JOptionPane.showMessageDialog(xoBrd,"The Game is a Draw!");
-                xoBrd.DisableAllPositions(false);
-                XOButton.DefaultContentPosition();
+                }
+                
                 ResetGame();
                 if(XOButton.vs==1)
                 if(XOButton.pl1=="Computer")
@@ -165,8 +179,7 @@ public class LogicalArray {
             if(XOButton.cnt==4)
             {
             	JOptionPane.showMessageDialog(xoBrd, XOButton.pl2 + " Win the game");
-            	xoBrd.DisableAllPositions(false);
-            	XOButton.DefaultContentPosition();
+
 //                String temp=XOButton.pl1;
 //                XOButton.pl1=XOButton.pl2;
 //                XOButton.pl2=temp;
@@ -182,7 +195,7 @@ public class LogicalArray {
 	
 	public static void ResetGame() {
 		
-		GArray = new int[9];
+		GArray = new int[3][3];
 		XOButton.DefaultContentPosition();
 		XOButton.DisableAllPositions(true);
 		XOButton.cnt=0;
