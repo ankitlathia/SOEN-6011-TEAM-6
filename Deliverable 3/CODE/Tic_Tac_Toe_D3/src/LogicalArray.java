@@ -37,9 +37,6 @@ public class LogicalArray {
 
 		// Check horizontal boxes in board
 
-//		if ((GArray[0] == Marker && GArray[1] == Marker && GArray[2] == Marker)
-//				|| (GArray[3] == Marker && GArray[4] == Marker && GArray[5] == Marker)
-//				|| (GArray[6] == Marker && GArray[7] == Marker && GArray[8] == Marker)) 
 		if((GArray[0][0] == Marker && GArray[0][1] == Marker && GArray[0][2] == Marker) ||
 				(GArray[1][0] == Marker && GArray[1][1] == Marker && GArray[1][2] == Marker) ||
 				(GArray[2][0] == Marker && GArray[2][1] == Marker && GArray[2][2] == Marker))
@@ -68,9 +65,6 @@ public class LogicalArray {
 
 		} else
 
-//		if ((GArray[0] == Marker && GArray[3] == Marker && GArray[6] == Marker)
-//				|| (GArray[1] == Marker && GArray[4] == Marker && GArray[7] == Marker)
-//				|| (GArray[2] == Marker && GArray[5] == Marker && GArray[8] == Marker)) 
 			if((GArray[0][0] == Marker && GArray[1][0] == Marker && GArray[2][2] == Marker) ||
 					(GArray[0][1] == Marker && GArray[1][1] == Marker && GArray[2][1] == Marker) ||
 					(GArray[0][2] == Marker && GArray[1][2] == Marker && GArray[2][2] == Marker))	
@@ -97,8 +91,7 @@ public class LogicalArray {
 			xoBrd.DisableAllPositions(false);
 
 		} else 
-//			if ((GArray[0] == Marker && GArray[4] == Marker && GArray[8] == Marker)
-//				|| (GArray[6] == Marker && GArray[4] == Marker && GArray[2] == Marker))
+
 			if ((GArray[0][0] == Marker && GArray[1][1] == Marker && GArray[2][2] == Marker)
 					|| (GArray[2][0] == Marker && GArray[1][1] == Marker && GArray[0][2] == Marker))
 
@@ -169,7 +162,7 @@ public class LogicalArray {
                 if(XOButton.pl1=="Computer")
                 {
                 	XOButton.turn=false;
-                    AI.compplay(XOButton.val);
+                    AI.computerPlayer(XOButton.val);
                 }
                 else
                 	XOButton.turn=false;
@@ -186,7 +179,7 @@ public class LogicalArray {
                 ResetGame();
                 if(XOButton.vs==1)
                 if(XOButton.pl1=="Computer")
-                    AI.compplay(XOButton.val);
+                    AI.computerPlayer(XOButton.val);
                 else
                 	XOButton.turn=false;
             }

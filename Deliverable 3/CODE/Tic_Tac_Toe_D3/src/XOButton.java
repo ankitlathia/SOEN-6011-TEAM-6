@@ -77,14 +77,14 @@ public class XOButton extends JButton implements ActionListener {
 
 		Pressed = (JButton) e.getSource();
 		if(Menu.menuPlayersPlayers.isSelected())
-		playPlayers();
+			playPlayerVsPlayer();
 		else
 		{	
 			TicTacToe.label2.setText("");
 			for (int i = 0; i < 9; i++) {
 				if (Pressed == buttons[i]) {
-					 if(play(i / 3, i % 3)&&turn==true)
-				            AI.compplay(val);
+					 if(playPlayerVsComputer(i / 3, i % 3)&&turn==true)
+				            AI.computerPlayer(val);
 				}
 			}
 		}
@@ -93,7 +93,7 @@ public class XOButton extends JButton implements ActionListener {
 
 	}
 	
-	public void playPlayers() {
+	public void playPlayerVsPlayer() {
 		
 		
 		for (int i = 0; i < 9; i++) {
@@ -108,7 +108,7 @@ public class XOButton extends JButton implements ActionListener {
 			
 		}
 	}
-	 static boolean play(int l,int m)
+	 static boolean playPlayerVsComputer(int l,int m)
 	    {
 	        if(LogicalArray.GArray[l][m]==0)
 	        {
@@ -117,7 +117,7 @@ public class XOButton extends JButton implements ActionListener {
 	        	c = l;
 	        	d = m;
 	        	
-	        	flip();
+	        	flipPlayerAndComputer();
 	        	 LogicalArray.GArray[l][m]=val;
 	        	 
 	        	 if(l == 0 && m == 0){
@@ -205,7 +205,7 @@ public class XOButton extends JButton implements ActionListener {
 
 	}
 	
-	 static void flip()
+	 static void flipPlayerAndComputer()
 	    {
 	        if(let == 'X')
 	        {
