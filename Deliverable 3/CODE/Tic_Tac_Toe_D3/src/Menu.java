@@ -123,9 +123,9 @@ class Menu extends 	JFrame implements	ActionListener
 						TicTacToe.player.add(TicTacToe.p1);
 						TicTacToe.player.add(TicTacToe.xostr);
 						TicTacToe.player.add(TicTacToe.p2);
-						
-						PlayerScore.table.getColumnModel().getColumn(0).setHeaderValue(TicTacToe.p1);
-						PlayerScore.table.getColumnModel().getColumn(1).setHeaderValue(TicTacToe.p2);
+						PlayerScore.model.setRowCount(0);
+						PlayerScore.table.getColumnModel().getColumn(1).setHeaderValue(TicTacToe.p1);
+						PlayerScore.table.getColumnModel().getColumn(2).setHeaderValue(TicTacToe.p2);
 						
 						
 						if(TicTacToe.player.get(1).equalsIgnoreCase("x")){
