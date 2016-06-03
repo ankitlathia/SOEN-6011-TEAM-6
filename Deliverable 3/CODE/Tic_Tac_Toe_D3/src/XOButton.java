@@ -69,7 +69,7 @@ public class XOButton extends JButton implements ActionListener {
 
 		X = new ImageIcon(this.getClass().getResource("X.png"));
 		O = new ImageIcon(this.getClass().getResource("O.png"));
-		gift = new ImageIcon(this.getClass().getResource("gift.gif"));
+		gift = new ImageIcon(this.getClass().getResource("gift1.gif"));
 		
 		this.addActionListener(this);
 

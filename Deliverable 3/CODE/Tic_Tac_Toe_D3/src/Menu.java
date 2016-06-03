@@ -6,7 +6,7 @@ import javax.swing.*;
 
 class Menu extends 	JFrame implements	ActionListener
 {
-	private final int	ITEM_PLAIN	=	0;	// Item types
+	private final int	ITEM_PLAIN	=	0;	
 	private final int	ITEM_CHECK	=	1;
 	private final int	ITEM_RADIO	=	2;
 
@@ -163,6 +163,8 @@ class Menu extends 	JFrame implements	ActionListener
 			    	XOButton.pl2="Computer";
 			    	Brd.ResetGame();
 			    	XOButton.vs=1;
+			    	PlayerScore.table.getColumnModel().getColumn(0).setHeaderValue(XOButton.pl1);
+					PlayerScore.table.getColumnModel().getColumn(1).setHeaderValue(XOButton.pl2);
 			    	menuPlayersPlayers.setSelected(false);
 			    }else{
 			    	menuPlayersPlayers.setSelected(true);
@@ -264,14 +266,12 @@ class Menu extends 	JFrame implements	ActionListener
 		
 	}
 
-	public JMenuItem CreateMenuItem( JMenu menu, int iType, String sText,
-								ImageIcon image, int acceleratorKey,
-								String sToolTip )
+	public JMenuItem CreateMenuItem( JMenu menu, int type, String text, ImageIcon image, int key, String tooltip )
 	{
-		// Create the item
+		
 		JMenuItem menuItem;
 
-		switch( iType )
+		switch( type )
 		{
 			case ITEM_RADIO:
 				menuItem = new JRadioButtonMenuItem();
@@ -286,22 +286,20 @@ class Menu extends 	JFrame implements	ActionListener
 				break;
 		}
 
-		// Add the item test
-		menuItem.setText( sText );
-
-		// Add the optional icon
+		
+		menuItem.setText( text );
+		
 		if( image != null )
 			menuItem.setIcon( image );
+		
+		if( key > 0 )
+			menuItem.setMnemonic( key );
 
-		// Add the accelerator key
-		if( acceleratorKey > 0 )
-			menuItem.setMnemonic( acceleratorKey );
+		
+		if( tooltip != null )
+			menuItem.setToolTipText( tooltip );
 
-		// Add the optional tool tip text
-		if( sToolTip != null )
-			menuItem.setToolTipText( sToolTip );
-
-		// Add an action handler to this menu item
+		
 		menuItem.addActionListener( this );
 
 		menu.add( menuItem );

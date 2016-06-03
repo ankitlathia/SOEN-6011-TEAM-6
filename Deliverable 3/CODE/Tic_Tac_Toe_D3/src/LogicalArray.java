@@ -75,7 +75,7 @@ public class LogicalArray {
 				JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
 				player1Score.add(1);
 				player2Score.add(0);
-				PlayerScore.model.addRow(new Object[] { 1, 0});
+				PlayerScore.model.addRow(new Object[] {"", 1, 0});
 				PlayerScore.totalScore();
 				ResetGame();
 				
@@ -83,7 +83,7 @@ public class LogicalArray {
 				JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
 				player1Score.add(0);
 				player2Score.add(1);
-				PlayerScore.model.addRow(new Object[] { 0, 1});
+				PlayerScore.model.addRow(new Object[] {"", 0, 1});
 				PlayerScore.totalScore();
 				ResetGame();
 			}
@@ -102,7 +102,7 @@ public class LogicalArray {
 				JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
 				player1Score.add(1);
 				player2Score.add(0);
-				PlayerScore.model.addRow(new Object[] { 1, 0});
+				PlayerScore.model.addRow(new Object[] {"", 1, 0});
 				PlayerScore.totalScore();
 				ResetGame();
 				
@@ -110,7 +110,7 @@ public class LogicalArray {
 				JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
 				player1Score.add(0);
 				player2Score.add(1);
-				PlayerScore.model.addRow(new Object[] { 0, 1});
+				PlayerScore.model.addRow(new Object[] {"", 0, 1});
 				PlayerScore.totalScore();
 				ResetGame();
 			}
@@ -149,17 +149,31 @@ public class LogicalArray {
             {
                 if(XOButton.cnt==1)
                 {
-                	JOptionPane.showMessageDialog(
-                            null,
-                            new JLabel( "CONGRATULATIONS : " + XOButton.pl1 + " Win the game", XOButton.gift, JLabel.LEFT),
-                            "Message", JOptionPane.INFORMATION_MESSAGE);
+                	if(XOButton.pl1.equalsIgnoreCase("Computer"))
+                	{
+                		JOptionPane.showMessageDialog(xoBrd, XOButton.pl1 + " Win the game");
+                		PlayerScore.model.addRow(new Object[] {"" , 0, 1});
+        				PlayerScore.totalScore();
+                		
+                	}
+                	else {
+                		JOptionPane.showMessageDialog(
+                                null,
+                                new JLabel( "CONGRATULATIONS : " + XOButton.pl1 + " Win the game", XOButton.gift, JLabel.LEFT),
+                                "Message", JOptionPane.INFORMATION_MESSAGE);
+                		
+                		PlayerScore.model.addRow(new Object[] {"", 1, 0});
+        				PlayerScore.totalScore();
+                	}
+
 
                 }
                 
                 if(XOButton.cnt==0)
                 {
                 	JOptionPane.showMessageDialog(xoBrd,"The Game is a Draw!");
-                	
+                	PlayerScore.model.addRow(new Object[] {"", 0, 0});
+    				PlayerScore.totalScore();
                 }
                 
                 ResetGame();
@@ -175,8 +189,23 @@ public class LogicalArray {
             }
             else
             if(XOButton.cnt==4)
-            {
-            	JOptionPane.showMessageDialog(xoBrd, XOButton.pl2 + " Win the game");
+            {	
+            	if(XOButton.pl2.equalsIgnoreCase("Computer"))
+            	{
+            		JOptionPane.showMessageDialog(xoBrd, XOButton.pl2 + " Win the game");
+                	PlayerScore.model.addRow(new Object[] {"", 0, 1});
+    				PlayerScore.totalScore();
+            		
+            	}
+            	else {
+            		JOptionPane.showMessageDialog(
+                            null,
+                            new JLabel( "CONGRATULATIONS : " + XOButton.pl2 + " Win the game", XOButton.gift, JLabel.LEFT),
+                            "Message", JOptionPane.INFORMATION_MESSAGE);
+            		
+            		PlayerScore.model.addRow(new Object[] {"", 1, 0});
+    				PlayerScore.totalScore();
+            	}
 
                 String temp=XOButton.pl1;
                 XOButton.pl1=XOButton.pl2;
