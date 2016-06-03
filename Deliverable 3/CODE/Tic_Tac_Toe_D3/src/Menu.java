@@ -165,6 +165,7 @@ class Menu extends 	JFrame implements	ActionListener
 			  public void itemStateChanged(ItemEvent e) {
 			    if(e.getStateChange() == ItemEvent.SELECTED){
 			    	XOButton.type = 1;
+			    	Brd.ResetGame();
 			    	menuPlayersMedium.setSelected(false);
 			    	menuPlayersDifficult.setSelected(false);
 			    }
@@ -175,6 +176,7 @@ class Menu extends 	JFrame implements	ActionListener
 			  public void itemStateChanged(ItemEvent e) {
 			    if(e.getStateChange() == ItemEvent.SELECTED){
 			    	XOButton.type = 2;
+			    	Brd.ResetGame();
 			    	menuPlayersDifficult.setSelected(false);
 			    	menuPlayersEasy.setSelected(false);
 			    }
@@ -185,6 +187,7 @@ class Menu extends 	JFrame implements	ActionListener
 			  public void itemStateChanged(ItemEvent e) {
 			    if(e.getStateChange() == ItemEvent.SELECTED){
 			    	XOButton.type = 3;
+			    	Brd.ResetGame();
 			    	menuPlayersMedium.setSelected(false);
 			    	menuPlayersEasy.setSelected(false);
 			    }

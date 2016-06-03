@@ -173,9 +173,9 @@ public class LogicalArray {
             {
             	JOptionPane.showMessageDialog(xoBrd, XOButton.pl2 + " Win the game");
 
-//                String temp=XOButton.pl1;
-//                XOButton.pl1=XOButton.pl2;
-//                XOButton.pl2=temp;
+                String temp=XOButton.pl1;
+                XOButton.pl1=XOButton.pl2;
+                XOButton.pl2=temp;
                 ResetGame();
                 if(XOButton.vs==1)
                 if(XOButton.pl1=="Computer")
@@ -193,7 +193,7 @@ public class LogicalArray {
 		XOButton.DisableAllPositions(true);
 		XOButton.cnt=0;
 		XOButton.val=1;
-		XOButton.let='\u0000';
+		XOButton.let='X';
 		XOButton.Player = false; // player x
 		XOButton.PlayerMark = 1; // default Value x
 		

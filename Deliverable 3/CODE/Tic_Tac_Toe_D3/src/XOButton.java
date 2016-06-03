@@ -27,7 +27,7 @@ public class XOButton extends JButton implements ActionListener {
 	int arrayX = 0;
 	int arrayY = 0;
 	static Random rnd=new Random();
-	static int cnt;
+	static int cnt = 0;
 
 	static int val;
 
@@ -43,7 +43,7 @@ public class XOButton extends JButton implements ActionListener {
 
 	static int vs=1;
 	static boolean turn=true;
-    static char let;
+    static char let = 'X';
     static String pl1="You";
 
 	static String pl2="Computer";
@@ -63,8 +63,8 @@ public class XOButton extends JButton implements ActionListener {
 		}
 		add(p);
 
-		SetGameVariables();
-		//ResetGame();
+		//SetGameVariables();
+		ResetGame();
 
 		X = new ImageIcon(this.getClass().getResource("X.png"));
 		O = new ImageIcon(this.getClass().getResource("O.png"));
@@ -117,9 +117,7 @@ public class XOButton extends JButton implements ActionListener {
 	        	c = l;
 	        	d = m;
 	        	
-	        	flipPlayerAndComputer();
-	        	 LogicalArray.GArray[l][m]=val;
-	        	 
+	        	
 	        	 if(l == 0 && m == 0){
 	        	SetXOPositionComp(buttons[0], let);
 	        	JButtonPositionDisablerComp(buttons[0], let);
@@ -156,7 +154,11 @@ public class XOButton extends JButton implements ActionListener {
 	 	        	SetXOPositionComp(buttons[8], let);
 	 	        	JButtonPositionDisablerComp(buttons[8], let);
 	 	        	 }
+	        	
+	        	 LogicalArray.GArray[l][m]=val;
+	        	 flipPlayerAndComputer();
 	            LogicalArray.checkwinComVsPly(l,m,LogicalArray.GArray[l][m]);
+	            
 	            return true;
 	        }
 	        else
@@ -179,7 +181,7 @@ public class XOButton extends JButton implements ActionListener {
 		SetGameVariables(); // Reset the Game
 		cnt=0;
         val=1;
-        let='\u0000';
+        let='X';
 		//TicTacToe.label2.setText(TicTacToe.player.get(0) + "'s turn");
 
 	}

@@ -79,7 +79,7 @@ public class AI {
 	                        if((LogicalArray.GArray[1][0]+LogicalArray.GArray[1][1]+LogicalArray.GArray[1][2])==XOButton.val)
 	                        	XOButton.playPlayerVsComputer(1,0);
 	                        else
-	                            if(LogicalArray.GArray[0][1]!=0)
+	                            if(LogicalArray.GArray[0][1] != 0)
 	                            	XOButton.playPlayerVsComputer(0,2);
 	                            else
 	                            	XOButton.playPlayerVsComputer(2,0);
