@@ -104,6 +104,16 @@ class Menu extends 	JFrame implements	ActionListener
 			    	TicTacToe.pName1.setText("");
 			    	TicTacToe.pName2.setText("");
 			    	TicTacToe.xo.setText("");
+			    	
+			    	TicTacToe.nameFrame.add(TicTacToe.namePanel);
+			    	TicTacToe.namePanel.add(new JLabel("Player 1 Name : "));
+			    	TicTacToe.namePanel.add(TicTacToe.pName1);
+			    	TicTacToe.namePanel.add(new JLabel("Player 1 Choose X or 0"));
+			    	TicTacToe.namePanel.add(TicTacToe.xo);
+			    	TicTacToe.namePanel.add(new JLabel("Player 2 Name : "));
+			    	TicTacToe.namePanel.add(TicTacToe.pName2);
+					
+					
 			    	TicTacToe.result = JOptionPane.showConfirmDialog(null,TicTacToe.namePanel, "Name of player", JOptionPane.OK_OPTION);
 					if(TicTacToe.result == JOptionPane.OK_OPTION) {
 						TicTacToe.p1=TicTacToe.pName1.getText();

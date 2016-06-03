@@ -27,7 +27,7 @@ public class TicTacToe extends JFrame {
 	
 	private JSplitPane splitPane;
 	
-	JFrame nameFrame = new JFrame("Player Form ");
+	static JFrame nameFrame = new JFrame("Player Form ");
 	
     static JPanel namePanel = new JPanel(new GridLayout(0,1));
 	static JTextField pName1 = new JTextField(5);
@@ -65,14 +65,6 @@ public class TicTacToe extends JFrame {
 		add(splitPane, BorderLayout.CENTER);
 		//add(TButtons, BorderLayout.SOUTH);
 
-		nameFrame.add(namePanel);
-		namePanel.add(new JLabel("Player 1 Name : "));
-		namePanel.add(pName1);
-		namePanel.add(new JLabel("Player 1 Choose X or 0"));
-		namePanel.add(xo);
-		namePanel.add(new JLabel("Player 2 Name : "));
-		namePanel.add(pName2);
-		
 		
 		
 		label2 = new JLabel("");

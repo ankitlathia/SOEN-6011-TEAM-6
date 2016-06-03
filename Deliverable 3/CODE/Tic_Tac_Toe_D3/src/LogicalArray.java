@@ -155,6 +155,7 @@ public class LogicalArray {
                 if(XOButton.cnt==0)
                 {
                 	JOptionPane.showMessageDialog(xoBrd,"The Game is a Draw!");
+                	
                 }
                 
                 ResetGame();
