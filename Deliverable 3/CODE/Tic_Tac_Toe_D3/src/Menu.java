@@ -226,7 +226,7 @@ class Menu extends 	JFrame implements	ActionListener
 			  public void itemStateChanged(ItemEvent e) {
 			    if(e.getStateChange() == ItemEvent.SELECTED){
 			    	try {
-						playBackgroundAudio.playAudio(this.getClass().getResource("fortress.midi"));
+						playBackgroundAudio.playAudio(this.getClass().getResource("ba.midi"));
 					} catch (MalformedURLException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();

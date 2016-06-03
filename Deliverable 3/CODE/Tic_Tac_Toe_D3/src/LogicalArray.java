@@ -149,7 +149,11 @@ public class LogicalArray {
             {
                 if(XOButton.cnt==1)
                 {
-                	JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + XOButton.pl1 + " Win the game");
+                	JOptionPane.showMessageDialog(
+                            null,
+                            new JLabel( "CONGRATULATIONS : " + XOButton.pl1 + " Win the game", XOButton.gift, JLabel.LEFT),
+                            "Message", JOptionPane.INFORMATION_MESSAGE);
+
                 }
                 
                 if(XOButton.cnt==0)

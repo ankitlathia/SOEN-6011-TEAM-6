@@ -76,7 +76,7 @@ public class TicTacToe extends JFrame {
 		setSize(800, 500);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		playBackgroundAudio.playAudio(this.getClass().getResource("fortress.midi"));
+		playBackgroundAudio.playAudio(this.getClass().getResource("ba.midi"));
 
 		Menu.menuGameNew.addActionListener(new ActionListener() {
 
