@@ -16,7 +16,7 @@ public class AI {
 	            	placed=computerPlayerMove(XOButton.c,XOButton.d,1);
 	        }
 	        if(placed)
-	                doany();
+	                RandomMove();
 	    }
 	 
 	 static boolean computerPlayerMove(int x,int y,int n)
@@ -60,7 +60,7 @@ public class AI {
 	        return true;
 	    }
 	 
-	 static  void doany()
+	 static  void RandomMove()
 	    {
 	        int l=2,m=0;
 	        switch(XOButton.cnt)

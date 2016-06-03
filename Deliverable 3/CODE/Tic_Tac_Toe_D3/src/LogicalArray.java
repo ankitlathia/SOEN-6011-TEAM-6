@@ -213,7 +213,7 @@ public class LogicalArray {
                 ResetGame();
                 if(XOButton.vs==1)
                 if(XOButton.pl1=="Computer")
-                    AI.computerPlayer(XOButton.val);
+                   AI.computerPlayer(XOButton.val);
                 else
                 	XOButton.turn=false;
             }
