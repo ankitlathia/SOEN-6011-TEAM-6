@@ -47,7 +47,7 @@ public class LogicalArray {
 				JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
 				player1Score.add(1);
 				player2Score.add(0);
-				PlayerScore.model.addRow(new Object[] { 1, 0});
+				PlayerScore.model.addRow(new Object[] {"", 1, 0});
 				PlayerScore.totalScore();
 				ResetGame();
 				
@@ -56,12 +56,11 @@ public class LogicalArray {
 				JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
 				player1Score.add(0);
 				player2Score.add(1);
-				PlayerScore.model.addRow(new Object[] { 0, 1});
+				PlayerScore.model.addRow(new Object[] {"", 0, 1});
 				PlayerScore.totalScore();
 				ResetGame();
 			}
-
-			xoBrd.DisableAllPositions(false);
+			xoBrd.DisableAllPositions(true);
 
 		} else
 
@@ -88,7 +87,7 @@ public class LogicalArray {
 				ResetGame();
 			}
 
-			xoBrd.DisableAllPositions(false);
+			xoBrd.DisableAllPositions(true);
 
 		} else 
 
@@ -114,9 +113,25 @@ public class LogicalArray {
 				PlayerScore.totalScore();
 				ResetGame();
 			}
-			xoBrd.DisableAllPositions(false);
+			xoBrd.DisableAllPositions(true);
 
 		}
+			else {
+				if(GArray[0][0] != 0 && GArray[1][0] != 0 && GArray[2][2] != 0 &&
+						GArray[0][1] != 0 && GArray[1][1] != 0 && GArray[2][1] != 0 &&
+						GArray[0][2] != 0 && GArray[1][2] != 0 && GArray[2][2] != 0) {
+					
+					
+					JOptionPane.showMessageDialog(xoBrd, "Game is draw");
+					player1Score.add(0);
+					player2Score.add(0);
+					PlayerScore.model.addRow(new Object[] {"", 0, 0});
+					PlayerScore.totalScore();
+					ResetGame();
+					xoBrd.DisableAllPositions(true);
+				}
+				
+			}
 		
 	}
 	

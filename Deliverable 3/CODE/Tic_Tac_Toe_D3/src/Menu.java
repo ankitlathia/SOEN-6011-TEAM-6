@@ -33,7 +33,7 @@ class Menu extends 	JFrame implements	ActionListener
 	
 	private JMenu    menuPlayers;
 	static JCheckBoxMenuItem menuPlayersPlayers = new JCheckBoxMenuItem("Player VS Player", false);
-	private	JCheckBoxMenuItem menuPlayersComputer = new JCheckBoxMenuItem("Player VS Computer", true);
+	static JCheckBoxMenuItem menuPlayersComputer = new JCheckBoxMenuItem("Player VS Computer", true);
 	private JRadioButtonMenuItem menuPlayersEasy  = new JRadioButtonMenuItem("Easy", true);
 	private JRadioButtonMenuItem menuPlayersMedium = new JRadioButtonMenuItem("Medium");
 	private JRadioButtonMenuItem menuPlayersDifficult= new JRadioButtonMenuItem("Difficult");
@@ -101,10 +101,14 @@ class Menu extends 	JFrame implements	ActionListener
 			    	menuPlayersDifficult.setEnabled(false);
 			    	
 			    	TicTacToe.player.clear();
-			    	TicTacToe.pName1.setText("");
-			    	TicTacToe.pName2.setText("");
-			    	TicTacToe.xo.setText("");
+			    	PlayerScore.model.setRowCount(0);
+			    	PlayerScore.count = 0;
 			    	
+			    	if(TicTacToe.pName1.getParent() == null) {
+
+				    	TicTacToe.pName1.setText("");
+				    	TicTacToe.pName2.setText("");
+				    	TicTacToe.xo.setText("");
 			    	TicTacToe.nameFrame.add(TicTacToe.namePanel);
 			    	TicTacToe.namePanel.add(new JLabel("Player 1 Name : "));
 			    	TicTacToe.namePanel.add(TicTacToe.pName1);
@@ -112,13 +116,20 @@ class Menu extends 	JFrame implements	ActionListener
 			    	TicTacToe.namePanel.add(TicTacToe.xo);
 			    	TicTacToe.namePanel.add(new JLabel("Player 2 Name : "));
 			    	TicTacToe.namePanel.add(TicTacToe.pName2);
-					
+			    	}
 					
 			    	TicTacToe.result = JOptionPane.showConfirmDialog(null,TicTacToe.namePanel, "Name of player", JOptionPane.OK_OPTION);
 					if(TicTacToe.result == JOptionPane.OK_OPTION) {
 						TicTacToe.p1=TicTacToe.pName1.getText();
 						TicTacToe.xostr = TicTacToe.xo.getText();
 						TicTacToe.p2=TicTacToe.pName2.getText();
+						
+						if(TicTacToe.p1 == null || TicTacToe.p2 == null)
+						{
+							TicTacToe.p1="Player 1";
+							TicTacToe.xostr = "x";
+							TicTacToe.p2="Player 2";
+						}
 						
 						TicTacToe.player.add(TicTacToe.p1);
 						TicTacToe.player.add(TicTacToe.xostr);
@@ -129,9 +140,11 @@ class Menu extends 	JFrame implements	ActionListener
 						
 						
 						if(TicTacToe.player.get(1).equalsIgnoreCase("x")){
-							XOButton.Player = false; // player x	
+							XOButton.Player = false; // player x
+							XOButton.PlayerMark = 1;
 						}else{
 							XOButton.Player = true; // player 0
+							XOButton.PlayerMark = 2;
 						}
 					}else {
 						TicTacToe.p1="Player 1";
@@ -141,8 +154,17 @@ class Menu extends 	JFrame implements	ActionListener
 						TicTacToe.player.add(TicTacToe.p1);
 						TicTacToe.player.add("x");
 						TicTacToe.player.add(TicTacToe.p2);
-						PlayerScore.table.getColumnModel().getColumn(0).setHeaderValue(TicTacToe.p1);
-						PlayerScore.table.getColumnModel().getColumn(1).setHeaderValue(TicTacToe.p2);
+						PlayerScore.table.getColumnModel().getColumn(1).setHeaderValue(TicTacToe.p1);
+						PlayerScore.table.getColumnModel().getColumn(2).setHeaderValue(TicTacToe.p2);
+					}
+					
+					
+					try {
+						playBackgroundAudio.stopAudio();
+						playBackgroundAudio.playAudio(this.getClass().getResource("pp.midi"));
+					} catch (MalformedURLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
 					}
 			    	
 			    }else{
@@ -163,9 +185,21 @@ class Menu extends 	JFrame implements	ActionListener
 			    	XOButton.pl2="Computer";
 			    	Brd.ResetGame();
 			    	XOButton.vs=1;
-			    	PlayerScore.table.getColumnModel().getColumn(0).setHeaderValue(XOButton.pl1);
-					PlayerScore.table.getColumnModel().getColumn(1).setHeaderValue(XOButton.pl2);
+			    	PlayerScore.table.getColumnModel().getColumn(1).setHeaderValue(XOButton.pl1);
+					PlayerScore.table.getColumnModel().getColumn(2).setHeaderValue(XOButton.pl2);
 			    	menuPlayersPlayers.setSelected(false);
+			    	PlayerScore.model.setRowCount(0);
+			    	
+			    	PlayerScore.countC = 0;
+			    	
+			    	try {
+						playBackgroundAudio.stopAudio();
+						playBackgroundAudio.playAudio(this.getClass().getResource("ba.midi"));
+					} catch (MalformedURLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+			    	
 			    }else{
 			    	menuPlayersPlayers.setSelected(true);
 			    }
@@ -228,7 +262,12 @@ class Menu extends 	JFrame implements	ActionListener
 			  public void itemStateChanged(ItemEvent e) {
 			    if(e.getStateChange() == ItemEvent.SELECTED){
 			    	try {
-						playBackgroundAudio.playAudio(this.getClass().getResource("ba.midi"));
+			    		if(menuPlayersPlayers.isSelected()){
+						playBackgroundAudio.playAudio(this.getClass().getResource("pp.midi"));
+			    		}
+			    		else {
+			    		playBackgroundAudio.playAudio(this.getClass().getResource("ba.midi"));
+			    		}
 					} catch (MalformedURLException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();

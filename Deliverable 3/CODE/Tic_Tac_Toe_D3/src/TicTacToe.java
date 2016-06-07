@@ -82,7 +82,7 @@ public class TicTacToe extends JFrame {
 
 			public void actionPerformed(ActionEvent ae) {
 				dispose();
-				player.clear();
+				//player.clear();
 				try {
 					TicTacToe C = new TicTacToe();
 				} catch (MalformedURLException e) {

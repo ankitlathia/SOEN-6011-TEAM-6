@@ -102,8 +102,8 @@ public class XOButton extends JButton implements ActionListener {
 			if (Pressed == buttons[i]) {
 
 				SetXOPosition(Pressed, Player); // change position text to "X" or "O"
-				GArray.ArrayInitialize(i / 3, i % 3, PlayerMark); //Initialize game array
 				JButtonPositionDisabler(buttons[i], Player); // Disable position of click
+				GArray.ArrayInitialize(i / 3, i % 3, PlayerMark); //Initialize game array
 				PlayerMark = SwithPlayersTurn(Player); // Switch Turns of players
 				
 			}
