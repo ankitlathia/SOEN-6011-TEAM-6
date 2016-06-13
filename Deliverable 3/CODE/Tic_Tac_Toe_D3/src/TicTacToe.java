@@ -40,6 +40,7 @@ public class TicTacToe extends JFrame {
 	
 	private PlayerScore pScore;
 	
+	
 
 	public TicTacToe() throws MalformedURLException {
 
@@ -49,7 +50,6 @@ public class TicTacToe extends JFrame {
 		GameBoard = new XOButton();
 		TButtons = new Menu();
 		pScore = new PlayerScore();
-		
 
 		TButtons.SetObjectOfBoard(GameBoard);
 		
@@ -70,6 +70,9 @@ public class TicTacToe extends JFrame {
 		label2 = new JLabel("");
 		label2.setHorizontalAlignment(SwingConstants.CENTER);
 		add(label2, BorderLayout.SOUTH);
+		
+//		TimerTest.clockSeconds.setHorizontalAlignment(SwingConstants.CENTER);
+//		add(TimerTest.clockSeconds, BorderLayout.SOUTH);
 		
 		setTitle("Tic Tac Toe");
 		setVisible(true);

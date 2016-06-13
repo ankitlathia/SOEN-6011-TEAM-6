@@ -69,7 +69,7 @@ public class XOButton extends JButton implements ActionListener {
 
 		X = new ImageIcon(this.getClass().getResource("X.png"));
 		O = new ImageIcon(this.getClass().getResource("O.png"));
-		gift = new ImageIcon(this.getClass().getResource("gift1.gif"));
+		gift = new ImageIcon(this.getClass().getResource("gift.gif"));
 		
 		this.addActionListener(this);
 
@@ -83,10 +83,18 @@ public class XOButton extends JButton implements ActionListener {
 		else
 		{	
 			TicTacToe.label2.setText("");
+//			if(type == 3) {
+//				TimerTest.startTimer();
+//			}
 			for (int i = 0; i < 9; i++) {
 				if (Pressed == buttons[i]) {
-					 if(playPlayerVsComputer(i / 3, i % 3)&&turn==true)
+					 if(playPlayerVsComputer(i / 3, i % 3)&&turn==true) {
+//						 if(type == 3) {
+//						 TimerTest.stopTimer();
+//						 }
 				            AI.computerPlayer(val);
+				           
+					 }
 				}
 			}
 		}

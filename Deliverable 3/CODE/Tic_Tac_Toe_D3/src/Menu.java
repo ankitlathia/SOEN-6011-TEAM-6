@@ -81,7 +81,7 @@ class Menu extends 	JFrame implements	ActionListener
 		menuPlayers.add(menuPlayersPlayers);
 		menuPlayers.add(menuPlayersComputer);
 		menuPlayers.add(menuPlayersEasy);
-		menuPlayers.add(menuPlayersMedium);
+		//menuPlayers.add(menuPlayersMedium);
 		menuPlayers.add(menuPlayersDifficult);
 		menuBar.add( menuPlayers );
 		

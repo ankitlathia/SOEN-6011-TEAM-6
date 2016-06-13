@@ -44,7 +44,13 @@ public class LogicalArray {
 
 			if (Marker == 1) {
 
-				JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
+				//JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
+				
+				JOptionPane.showMessageDialog(
+                        null,
+                        new JLabel( "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game", XOButton.gift, JLabel.LEFT),
+                        "Message", JOptionPane.INFORMATION_MESSAGE);
+				
 				player1Score.add(1);
 				player2Score.add(0);
 				PlayerScore.model.addRow(new Object[] {"", 1, 0});
@@ -53,7 +59,13 @@ public class LogicalArray {
 				
 			} else if (Marker == 2) {
 
-				JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
+				//JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
+				
+				JOptionPane.showMessageDialog(
+                        null,
+                        new JLabel( "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game", XOButton.gift, JLabel.LEFT),
+                        "Message", JOptionPane.INFORMATION_MESSAGE);
+				
 				player1Score.add(0);
 				player2Score.add(1);
 				PlayerScore.model.addRow(new Object[] {"", 0, 1});
@@ -71,7 +83,13 @@ public class LogicalArray {
 			// Check vertical boxes in board
 
 			if (Marker == 1) {
-				JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
+				//JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
+				
+				JOptionPane.showMessageDialog(
+                        null,
+                        new JLabel( "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game", XOButton.gift, JLabel.LEFT),
+                        "Message", JOptionPane.INFORMATION_MESSAGE);
+				
 				player1Score.add(1);
 				player2Score.add(0);
 				PlayerScore.model.addRow(new Object[] {"", 1, 0});
@@ -79,7 +97,13 @@ public class LogicalArray {
 				ResetGame();
 				
 			} else if (Marker == 2) {
-				JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
+				//JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
+				
+				JOptionPane.showMessageDialog(
+                        null,
+                        new JLabel( "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game", XOButton.gift, JLabel.LEFT),
+                        "Message", JOptionPane.INFORMATION_MESSAGE);
+				
 				player1Score.add(0);
 				player2Score.add(1);
 				PlayerScore.model.addRow(new Object[] {"", 0, 1});
@@ -98,7 +122,13 @@ public class LogicalArray {
 			// Check diagonal boxes in board
 
 			if (Marker == 1) {
-				JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
+				//JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game");
+				
+				JOptionPane.showMessageDialog(
+                        null,
+                        new JLabel( "CONGRATULATIONS : " + TicTacToe.player.get(0) + " Win the game", XOButton.gift, JLabel.LEFT),
+                        "Message", JOptionPane.INFORMATION_MESSAGE);
+				
 				player1Score.add(1);
 				player2Score.add(0);
 				PlayerScore.model.addRow(new Object[] {"", 1, 0});
@@ -106,7 +136,13 @@ public class LogicalArray {
 				ResetGame();
 				
 			} else if (Marker == 2) {
-				JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
+				//JOptionPane.showMessageDialog(xoBrd, "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game");
+				
+				JOptionPane.showMessageDialog(
+                        null,
+                        new JLabel( "CONGRATULATIONS : " + TicTacToe.player.get(2) + " Win the game", XOButton.gift, JLabel.LEFT),
+                        "Message", JOptionPane.INFORMATION_MESSAGE);
+				
 				player1Score.add(0);
 				player2Score.add(1);
 				PlayerScore.model.addRow(new Object[] {"", 0, 1});
